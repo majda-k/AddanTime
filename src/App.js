@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import SalatTime from "./SalatTime";
+import AdanCard from "./adanCard.jsx";
+import Ville from "./ville.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div
+      className="App"
+      style={{ backgroundColor: "#413c3c", color: "white", height: "100vh" }}
+    >
+      <container>
+        <SalatTime />
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "5px",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <AdanCard />
+        </div>
+        <Ville />
+      </container>
     </div>
   );
 }
