@@ -2,15 +2,22 @@ import "./App.css";
 import SalatTime from "./SalatTime";
 import AdanCard from "./adanCard.jsx";
 import Ville from "./ville.jsx";
+import { useState } from "react";
+
 
 function App() {
+    const [ville, setVille] = useState("");
+  
+  const onChangeVille = (e) => {
+  setVille(e.target.value);
+};
   return (
     <div
       className="App"
       style={{ backgroundColor: "#413c3c", color: "white", height: "100vh" }}
     >
       <container>
-        <SalatTime />
+        <SalatTime ville={ville} />
         <div
           style={{
             display: "flex",
@@ -21,7 +28,7 @@ function App() {
         >
           <AdanCard />
         </div>
-        <Ville />
+      <Ville value={ville} onChangeVille={onChangeVille} />
       </container>
     </div>
   );
